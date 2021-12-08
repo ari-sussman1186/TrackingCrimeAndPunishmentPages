@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<title>Crime and Punishment Datatable</title>
+<meta name="author" content="You">
+<meta name="description" content="Test">
+<meta content="text/html" http-equiv="Content-type" />
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+<!-- Load plotly.js into the DOM -->
+<script src='https://cdn.plot.ly/plotly-2.6.3.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+
+<style>
+  .dropdown-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+  }
+
+  .userSelection {
+    border: 5px outset black;
+    margin: 10px;
+    padding-left: 80px;
+  }
+
+  .graph {
+    border: 5px outset black;
+    margin: 10px;
+    padding-left: 80px;
+  }
+</style>
+
+  </head>
+  <body>
+    <!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#">Trinity School</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <!-- We've gotta implement some sort of system that differentiates between whether we're in or out of the states folder-->
+        <a class="nav-link" href="about.html">About</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">States</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+
+          
+            <a class="dropdown-item" href="alaska.html">alaska</a>
+          
+            <a class="dropdown-item" href="arkansas.html">arkansas</a>
+          
+            <a class="dropdown-item" href="california.html">california</a>
+          
+            <a class="dropdown-item" href="colorado.html">colorado</a>
+          
+            <a class="dropdown-item" href="connecticut.html">connecticut</a>
+          
+            <a class="dropdown-item" href="delaware.html">delaware</a>
+          
+            <a class="dropdown-item" href="florida.html">florida</a>
+          
+            <a class="dropdown-item" href="georgia.html">georgia</a>
+          
+            <a class="dropdown-item" href="hawaii.html">hawaii</a>
+          
+            <a class="dropdown-item" href="idaho.html">idaho</a>
+          
+            <a class="dropdown-item" href="illinois.html">illinois</a>
+          
+            <a class="dropdown-item" href="indiana.html">indiana</a>
+          
+            <a class="dropdown-item" href="iowa.html">iowa</a>
+          
+            <a class="dropdown-item" href="kansas.html">kansas</a>
+          
+            <a class="dropdown-item" href="kentucky.html">kentucky</a>
+          
+            <a class="dropdown-item" href="louisiana.html">louisiana</a>
+          
+            <a class="dropdown-item" href="maine.html">maine</a>
+          
+            <a class="dropdown-item" href="maryland.html">maryland</a>
+          
+            <a class="dropdown-item" href="massachusetts.html">massachusetts</a>
+          
+            <a class="dropdown-item" href="michigan.html">michigan</a>
+          
+            <a class="dropdown-item" href="minnesota.html">minnesota</a>
+          
+            <a class="dropdown-item" href="mississippi.html">mississippi</a>
+          
+            <a class="dropdown-item" href="missouri.html">missouri</a>
+          
+            <a class="dropdown-item" href="montana.html">montana</a>
+          
+            <a class="dropdown-item" href="nebraska.html">nebraska</a>
+          
+            <a class="dropdown-item" href="nevada.html">nevada</a>
+          
+            <a class="dropdown-item" href="new hampshire.html">new hampshire</a>
+          
+            <a class="dropdown-item" href="new jersey.html">new jersey</a>
+          
+            <a class="dropdown-item" href="new mexico.html">new mexico</a>
+          
+            <a class="dropdown-item" href="new york.html">new york</a>
+          
+            <a class="dropdown-item" href="north carolina.html">north carolina</a>
+          
+            <a class="dropdown-item" href="north dakota.html">north dakota</a>
+          
+            <a class="dropdown-item" href="ohio.html">ohio</a>
+          
+            <a class="dropdown-item" href="oklahoma.html">oklahoma</a>
+          
+            <a class="dropdown-item" href="oregon.html">oregon</a>
+          
+            <a class="dropdown-item" href="pennsylvania.html">pennsylvania</a>
+          
+            <a class="dropdown-item" href="rhode island.html">rhode island</a>
+          
+            <a class="dropdown-item" href="south carolina.html">south carolina</a>
+          
+            <a class="dropdown-item" href="south dakota.html">south dakota</a>
+          
+            <a class="dropdown-item" href="tennessee.html">tennessee</a>
+          
+            <a class="dropdown-item" href="texas.html">texas</a>
+          
+            <a class="dropdown-item" href="utah.html">utah</a>
+          
+            <a class="dropdown-item" href="vermont.html">vermont</a>
+          
+            <a class="dropdown-item" href="virginia.html">virginia</a>
+          
+            <a class="dropdown-item" href="washington.html">washington</a>
+          
+            <a class="dropdown-item" href="west virginia.html">west virginia</a>
+          
+            <a class="dropdown-item" href="wisconsin.html">wisconsin</a>
+          
+            <a class="dropdown-item" href="wyoming.html">wyoming</a>
+          
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Northeast</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+
+          
+            <a class="dropdown-item" href="massachusetts.html">Massachusetts</a>
+          
+            <a class="dropdown-item" href="new hampshire.html">New Hampshire</a>
+          
+            <a class="dropdown-item" href="rhode island.html">Rhode Island</a>
+          
+            <a class="dropdown-item" href="vermont.html">Vermont</a>
+          
+            <a class="dropdown-item" href="new jersey.html">New Jersey</a>
+          
+            <a class="dropdown-item" href="new york.html">New York</a>
+          
+            <a class="dropdown-item" href="pennsylvania.html">Pennsylvania</a>
+          
+        </div>
+      </li>
+  </div>
+</nav>
+
+
+    <main role="main" class="container">
+    <br> <br>
+    <br>
+    <h1>Tracking Crime and Punishment</h1>
+    <p>This is a cool project.</p>
+    <br>
+
+    <input type="hidden" id="selectedMicroState" value="MS"/>
+
+
+    <div id='mapDiv' style="width:1200px;height:600px;margin:auto;"><!-- Plotly chart will be drawn inside this DIV --></div>
+
+    <div class = "userSelection">
+      <h2>User selections: </h2>
+      <label for="year-select">Year:</label>
+      <select name="Years" id="year-select" onchange="generateMicroPlots()">
+        <option value="2001-2016">2001-2016</option>
+        <option value="2001">2001</option>
+        <option value="2002">2002</option>
+        <option value="2003">2003</option>
+        <option value="2004">2004</option>
+        <option value="2005">2005</option>
+        <option value="2006">2006</option>
+        <option value="2007">2007</option>
+        <option value="2008">2008</option>
+        <option value="2009">2009</option>
+        <option value="2010">2010</option>
+        <option value="2011">2011</option>
+        <option value="2012">2012</option>
+        <option value="2013">2013</option>
+        <option value="2014">2014</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+      </select>
+
+      <br> <br>
+
+      <label for="crime-select">Attribute/Crime:</label>
+      <select name="Types of Crime" id="crime-select" onchange="generateMicroPlots()">
+        <option value="prisoners_per_capita_per_one_hundred_thousand">Prisoner Count Per Capita</option>
+        <option value="violent_crime_total">Violent Crime</option>
+        <option value="murder_manslaughter_per_capita_per_one_hundred_thousand">Murders/Manslaughter Per Capita</option>
+        <option value="rape_legacy_per_capita_per_one_hundred_thousand">Rape Legacy Per Capita</option>
+        <option value="robbery_per_capita_per_one_hundred_thousand">Robbery Per Capita</option>
+        <option value="agg_assault_per_capita_per_one_hundred_thousand">Aggrevated Assault Per Capita</option>
+        <option value="property_crime_total">Property Crime</option>
+        <option value="burglary_per_capita_per_one_hundred_thousand">Burglary Per Capita</option>
+        <option value="larceny_per_capita_per_one_hundred_thousand">Larceny Per Capita</option>
+        <option value="vehicle_theft_per_capita_per_one_hundred_thousand">Vehicle Theft Per Capita</option>
+        <option value="total_crime_per_capita_per_one_hundred_thousand">Total Crime Per Capita</option>
+        <!-- <option value="state_population">State Population</option> Must remove FED from state population -->
+      </select>
+    </div>
+
+    <h2>Graphs:</h2>
+  	<div id='microCrimePieChart' class='graph' style="width:1200px;height:600px;"> </div>
+  	<br>
+  	<div id='lineBarMicro' class='graph' style="width:1200px;height:600px;"> </div>
+    <br>
+  	<div id='bar' class='graph' style="width:1200px;height:600px;"> </div>
+  	<br>
+  	<div id='table' class='graph' style="width:1200px;height:600px;"> </div>
+  </main>
+
+      <footer>
+We used data from Kaggle to determine trends across the past 15 years of how and where crime is committed. Data from <a href="https://www.kaggle.com/christophercorrea/prisoners-and-crime-in-united-states"> Kaggle - Crime and Incarceration in the United States</a>
+</footer>
+
+  </body>
+    <script src='/src/plotlyGenerator.js'></script>
+    <script>generateMicroPlots()</script>
+
+</html>
