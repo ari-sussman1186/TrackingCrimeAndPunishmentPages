@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<title>Crime and Punishment Datatable</title>
+<meta name="author" content="You">
+<meta name="description" content="Test">
+<meta content="text/html" http-equiv="Content-type" />
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+<!-- Load plotly.js into the DOM -->
+<script src='https://cdn.plot.ly/plotly-2.6.3.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+
+<style>
+  .dropdown-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+  }
+
+  .userSelection {
+    border: 5px outset black;
+    margin: 10px;
+    padding-left: 80px;
+  }
+
+  .graph {
+    border: 5px outset black;
+    margin: 10px;
+    padding-left: 80px;
+  }
+</style>
+
+  </head>
+  <body>
+    <!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#">Trinity School</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <!-- We've gotta implement some sort of system that differentiates between whether we're in or out of the states folder-->
+        <a class="nav-link" href="about.html">About</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">States</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+
+          
+            <a class="dropdown-item" href="alabama.html">alabama</a>
+          
+            <a class="dropdown-item" href="alaska.html">alaska</a>
+          
+            <a class="dropdown-item" href="arizona.html">arizona</a>
+          
+            <a class="dropdown-item" href="arkansas.html">arkansas</a>
+          
+            <a class="dropdown-item" href="california.html">california</a>
+          
+            <a class="dropdown-item" href="colorado.html">colorado</a>
+          
+            <a class="dropdown-item" href="connecticut.html">connecticut</a>
+          
+            <a class="dropdown-item" href="delaware.html">delaware</a>
+          
+            <a class="dropdown-item" href="florida.html">florida</a>
+          
+            <a class="dropdown-item" href="georgia.html">georgia</a>
+          
+            <a class="dropdown-item" href="hawaii.html">hawaii</a>
+          
+            <a class="dropdown-item" href="idaho.html">idaho</a>
+          
+            <a class="dropdown-item" href="illinois.html">illinois</a>
+          
+            <a class="dropdown-item" href="indiana.html">indiana</a>
+          
+            <a class="dropdown-item" href="iowa.html">iowa</a>
+          
+            <a class="dropdown-item" href="kansas.html">kansas</a>
+          
+            <a class="dropdown-item" href="kentucky.html">kentucky</a>
+          
+            <a class="dropdown-item" href="louisiana.html">louisiana</a>
+          
+            <a class="dropdown-item" href="maine.html">maine</a>
+          
+            <a class="dropdown-item" href="maryland.html">maryland</a>
+          
+            <a class="dropdown-item" href="massachusetts.html">massachusetts</a>
+          
+            <a class="dropdown-item" href="michigan.html">michigan</a>
+          
+            <a class="dropdown-item" href="minnesota.html">minnesota</a>
+          
+            <a class="dropdown-item" href="mississippi.html">mississippi</a>
+          
+            <a class="dropdown-item" href="missouri.html">missouri</a>
+          
+            <a class="dropdown-item" href="montana.html">montana</a>
+          
+            <a class="dropdown-item" href="nebraska.html">nebraska</a>
+          
+            <a class="dropdown-item" href="nevada.html">nevada</a>
+          
+            <a class="dropdown-item" href="new hampshire.html">new hampshire</a>
+          
+            <a class="dropdown-item" href="new jersey.html">new jersey</a>
+          
+            <a class="dropdown-item" href="new mexico.html">new mexico</a>
+          
+            <a class="dropdown-item" href="new york.html">new york</a>
+          
+            <a class="dropdown-item" href="north carolina.html">north carolina</a>
+          
+            <a class="dropdown-item" href="north dakota.html">north dakota</a>
+          
+            <a class="dropdown-item" href="ohio.html">ohio</a>
+          
+            <a class="dropdown-item" href="oklahoma.html">oklahoma</a>
+          
+            <a class="dropdown-item" href="oregon.html">oregon</a>
+          
+            <a class="dropdown-item" href="pennsylvania.html">pennsylvania</a>
+          
+            <a class="dropdown-item" href="rhode island.html">rhode island</a>
+          
+            <a class="dropdown-item" href="south carolina.html">south carolina</a>
+          
+            <a class="dropdown-item" href="south dakota.html">south dakota</a>
+          
+            <a class="dropdown-item" href="tennessee.html">tennessee</a>
+          
+            <a class="dropdown-item" href="texas.html">texas</a>
+          
+            <a class="dropdown-item" href="utah.html">utah</a>
+          
+            <a class="dropdown-item" href="vermont.html">vermont</a>
+          
+            <a class="dropdown-item" href="virginia.html">virginia</a>
+          
+            <a class="dropdown-item" href="washington.html">washington</a>
+          
+            <a class="dropdown-item" href="west virginia.html">west virginia</a>
+          
+            <a class="dropdown-item" href="wisconsin.html">wisconsin</a>
+          
+            <a class="dropdown-item" href="wyoming.html">wyoming</a>
+          
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Northeast</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+
+          
+            <a class="dropdown-item" href="massachusetts.html">Massachusetts</a>
+          
+            <a class="dropdown-item" href="new hampshire.html">New Hampshire</a>
+          
+            <a class="dropdown-item" href="rhode island.html">Rhode Island</a>
+          
+            <a class="dropdown-item" href="vermont.html">Vermont</a>
+          
+            <a class="dropdown-item" href="new jersey.html">New Jersey</a>
+          
+            <a class="dropdown-item" href="new york.html">New York</a>
+          
+            <a class="dropdown-item" href="pennsylvania.html">Pennsylvania</a>
+          
+        </div>
+      </li>
+  </div>
+</nav>
+
+
+    <main role="main" class="container">
+    <br> <br>
+    <br>
+
+    <img src="..\img\cover.jpeg" alt="Crime and Punishment" width="600" height="400" style="text-align: center;">
+    <h1>About: Tracking Crime and Punishment</h1>
+
+    <h3>Important Terms:</h3>
+    <ul>
+      <li>Per Capita: A statistic relative to the overall population within a state our the country</li>
+      <li>Murder: The act of ending another's life in a premeditated, or thought out manner</li>
+      <li>Manslaughter: The act of ending another's life in either an unintentional or non-premeditated(instictive) manner</li>
+      <li>Aggravated Assault: The act of harming another individual with the intent/consequence of inflicting serious injury, or the act of attacking another individual using a weapon</li>
+      <li>Property Crime: Any crime in which another person's property is stolen or destroyed</li>
+      <li>Robbery: The unlawful seizure of property by means of force or threat of force</li>
+      <li>Burglary: The act of entering private property without legal permission with the intent of committing crimes such as theft</li>
+      <li>Grand Theft Auto: take someone else's vehicle, worth $950 or more, without permission, with the intent to deprive the true owner of the vehicle.</li>
+      <li>Rape: Any sexual act committed by one person on another without the victim's consent</li>
+    </ul>
+
+    <h3>Lo-Fi Wireframe Sketches:</h3>
+    <img src="..\img\Nick-MacroSummary.jpg" alt="Nick's Macro Summary" width="400" height="500" style="transform:rotate(270deg);">
+    <br>
+    <img src="..\img\Nick-MicroSummary.jpg" alt="Nick's Micro Summary" width="400" height="500" style="transform:rotate(270deg);">
+
+    <h4>About</h4>
+    <p>My macro summary page includes a large map of the United States in which each state is shaded according to the prison count of that state. Below on the map includes a graph of the federal data such as various crimes over the years from 2000 to 2016. Furthermore, each state will have buttons that link to the micro summary for that specific state, and hovering over the state will provide the actual prisoner count for that state. My micro summary page includes a map of the selected state and includes various graphs on different types of data over the years.</p>
+
+    <h4>Critique</h4>
+    <p>My macro summary does not provide much data about the types of crime. Additionally, there are drop down menus that allow users to customize the presented data, and there are no signifiers that can provide users with how to use our software; instructions should be included for people to understand our tool. My micro summary provides a lot of information regarding the type of crime within a state but is not efficient in allowing users to choose their data. There should be an option that allows users to select the years, types of data, and also the state data in comparison to the federal data. Also, the map of the state is not very relevant.</p>
+
+    <h4>Discoverability:</h4>
+    <p>
+      <b>Affordances</b> - The design allows users to click on different states which provides an overall micro summary of that state in relation to the federal data (macro summary) <br>
+      <b>Signifiers</b> - The design provides clickable buttons with the state name to signify that the button can be clicked to provide more information (leads to micro summary)<br>
+      <b>Constraints</b> - The design currently does not provide any constraints <br>
+      <b>Mappings</b> - The design currently does not provide any mappings <br>
+      <b>Feedback</b> - The design currently does not provide any feedback
+    </p>
+
+    <h4>Usability:</h4>
+    <p>
+      <b>Accesibility</b> - The design has not considered differently-abled individuals <br>
+      <b>Ease</b> - The design can be used efficiently with the buttons and drop down menu in place<br>
+      <b>Tolerance</b> - The design does not take into account user risk, however, the product should not cause any harm<br>
+      <b>Flexiblity</b> - The design incorporates a drop down menu, allowing users to see select types of data<br>
+      <b>Perceptibility</b> - The design does not yet include anything related to accessibility<br>
+      <b>Comfort</b> - The design seems to be an appropriate size and space; this will be modified when we create the map and data<br>
+      <b>Iterability</b> - Yes, the design can evolve without being completely done; the only difference between the next version is including more easy to use features
+    </p>
+
+
+    <img src="..\img\Ari-MacroSummary.jpg" alt="Ari's Macro Summary" width="400" height="500" style="transform:rotate(270deg);">
+    <br>
+    <img src="..\img\Ari-MicroSummary.jpg" alt="Ari's Micro Summary" width="400" height="500" style="transform:rotate(270deg);">
+
+    h4>Critique</h4>
+    <p>My MacroSummary is generally pretty unclear, there are little signifiers that display what it's possible to do or see with my design. The core ideas are there, but it's difficult to imagine how a user would interact with the site. A similar thing could be said for my Microsummary. The essence of having a highlighted view of a specific state compared to the others is a good one, but there are still very few signfiers and there are not any seperate graphs shown on the micro pages. The general concept is very clear, an overall map of the United States with various shading scales to display certain metrics, but many of the finer details need attention here. </p>
+
+    <h4>Discoverability:</h4>
+    <p>
+      <b>Affordances</b> - Like Nick's design, The design allows users to click on different states to yield additional info, although in a more obscured manner than nick's <br>
+      <b>Signifiers</b> - Ari intended for this design to function such that when hovering over a state with the mouse, a dim highlight appears, showing it can be clicked on<br>
+      <b>Constraints</b> - The design currently does not provide any constraints <br>
+      <b>Mappings</b> - The design currently does not provide any mappings <br>
+      <b>Feedback</b> - The design currently does not provide any feedback
+    </p>
+
+    <h4>Usability:</h4>
+    <p>
+      <b>Accesibility</b> - The design has not considered differently-abled individuals <br>
+      <b>Ease</b> - The design can be used efficiently with state buttons<br>
+      <b>Tolerance</b> - The design does not take into account user risk, however, the product should not cause any harm<br>
+      <b>Flexiblity</b> - The design incorporates a drop dow🦈n menu, allowing users to see select types of data<br>
+      <b>Perceptibility</b> - The design does not yet include anything related to accessibility<br>
+      <b>Comfort</b> - The design seems to be an appropriate size and space; this will be modified when we create the map and data<br>
+      <b>Iterability</b> - Yes, the design can evolve without being completely done; the only difference between the next version is including more easy to use features and making things overall clearer
+    </p>
+
+    <h3>Combination of Design Elements</h3>
+    <p>We have combined our ideas to come together on the following concept for our page</p>
+    <p>
+      The macro-summary contains a map of the United States, with an additional dropdown to switch between metrics such as raw prison population, prisoners per capita and murders per capita<br>
+      When the user clicks on a state, a MicroSummary will appear, displaying several graphs showing over time data from 2001 to 2016<br>
+    </p>
+
+
+    <h3>LucidChart Graphic</h3>
+    <img src="..\img\Pipeline.png" alt="Project Pipeline" width="400" height="500">
+    <p>Our pipeline is relatively simple. We have specific datasets for the macro and microsummaries to process and compile, and that processing happens alongside the creation of input dropdowns to allow the user to navigate the site.</p>
+    <p>Once all building is complete, the project opens both on the local server as well as on Github Pages.</p>
+
+    <h3>Division of Labor</h3>
+    <p>We decided to divide our labor in terms of specific tasks to be done for each milestone</p>
+    <p>We have a Github Projects page within our repository where tasks are divided into To-Do and completed categories</p>
+    <p>For each milestone we will create a number of tasks and divvy up an approximately equal number of those tasks to each person</p>
+    <p>So far, Ari has been handling most of the work involving data collection, file structure and the project pipeline, while Nick has constructed the html pages themselves and worked with most of the bootstrap and plotly tasks</p>
+    <p>Both of us will be reviewing each other's work for project requirement</p>
+
+    <h3>about.html Requirements</h3>
+    <ul>
+      <li>Definitions of vocabulary necessary for understanding the information presented by your site</li>
+      <li> Pictures and analysis of the Lo-Fi wireframe sketches, including:</li>
+        <li>Evaluation of each wireframe form the required number of UX design perspectives</li>
+        <li>Elements selected from each wireframe, and why, for your final design</li>
+      <li>A LucidChart-generated graphic and a text-based description of your project pipeline, including how and when you format and process your data</li>
+      <li>A description of your division of labor</li>
+    </ul>
+  </main>
+
+  <footer>
+We used data from Kaggle to determine trends across the past 15 years of how and where crime is committed. Data from <a href="https://www.kaggle.com/christophercorrea/prisoners-and-crime-in-united-states"> Kaggle - Crime and Incarceration in the United States</a>
+</footer>
+
+
+  </body>
+</html>
