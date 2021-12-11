@@ -153,8 +153,8 @@ let fedData = d3Data.filter(function(row) {
 
   var data = [
     {
-      x: [stateSelect, 'Average US State'],
-      y: [(stateData[0].violent_crime_total + stateData[0].property_crime_total), ((fedData[0].violent_crime_total + fedData[0].property_crime_total) / 50)],
+      x: [stateSelect, 'Federal'],
+      y: [(stateData[0].violent_crime_total + stateData[0].property_crime_total), (fedData[0].violent_crime_total + fedData[0].property_crime_total)],
       type: 'bar'
     }
   ];
