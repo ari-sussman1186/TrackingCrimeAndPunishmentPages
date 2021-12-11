@@ -1,5 +1,5 @@
 let d3Data = [];
-let csv_url = "/src/crime_and_incarceration_by_state_data.csvV2.csv"; //"../resources/crime_and_incarceration_by_state_data.csv"
+let csv_url = "https://raw.githubusercontent.com/NicholasEng22/TrackingCrimeAndPunishment/main/resources/crime_and_incarceration_by_state_data.csvV2.csv";
 //"https://raw.githubusercontent.com/NicholasEng22/TrackingCrimeAndPunishment/main/resources/crime_and_incarceration_by_state_data.csvV2.csv
 
 function fillText() {
